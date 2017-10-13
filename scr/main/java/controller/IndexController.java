@@ -17,12 +17,12 @@ public class IndexController extends HttpServlet {
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String contextPath = request.getContentType();
-		if ("/header".equals(contextPath)) {
+		String path = request.getServletPath();
+		if ("/header".equals(path)) {
 			request.getRequestDispatcher("template/header.jsp").include(request, response);
-		} else if ("/menu".equals(contextPath)) {
+		} else if ("/menu".equals(path)) {
 			request.getRequestDispatcher("template/menu.jsp").include(request, response);
-		} else if ("/footer".equals(contextPath)) {
+		} else if ("/footer".equals(path)) {
 			request.getRequestDispatcher("template/footer.jsp").include(request, response);
 		} else {
 			return;
