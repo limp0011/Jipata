@@ -14,6 +14,10 @@
 	<div>WELCOME TO JIPATA FROM MMTH</div>
 	
 	<div style="padding: 20px;"><button type="button" class="btn btn-primary">GO</button></div>
+	<div id="header" class="jipata-header"><c:import url="/header" /></div>
+	<div id="menu" class="jipata-menu"></div>
+	<div id="body" class="jipata-body"></div>
+	<div id="footer" class="jipata-footer"></div>
 
 	<script src="<c:url value="/resources/javascript/jquery.min.js" />"></script>
 	<script src="<c:url value="/resources/javascript/bootstrap.min.js" />"></script>
