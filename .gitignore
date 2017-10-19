@@ -2,4 +2,5 @@
 /target/
 /.metadata/
 /Servers/
-target/
+/target/
+/target/m2e-wtp/web-resources/META-INF/maven/JIPATA/JIPATA/pom.properties

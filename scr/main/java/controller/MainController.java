@@ -26,13 +26,11 @@ public class MainController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		long tStart = System.currentTimeMillis();
 		InputStream resource = new FileInputStream(new File("C:/Work/test.txt"));
-		new BufferedReader(new InputStreamReader(resource), 1000000).lines().parallel().forEach(line -> {
-			try {
-				response.getWriter().append(line);
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
+		StringBuilder str = new StringBuilder();
+		new BufferedReader(new InputStreamReader(resource)).lines().parallel().forEach(line -> {
+			str.append(line);
 		});
+		response.getWriter().append(str);
 		long tEnd = System.currentTimeMillis();
 		long tDelta = tEnd - tStart;
 		double elapsedSeconds = tDelta / 1000.0;
